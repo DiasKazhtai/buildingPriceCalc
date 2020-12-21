@@ -12,6 +12,7 @@ const defaultState = [
             }
         ],
         questionTitle: 'Что будем строить ?',
+        answer: ['']
     },
     {
         step: 'Шаг 2',
@@ -22,6 +23,7 @@ const defaultState = [
                 id: 1,
             },
         ],
+        answer: ['']
     },
     {
         step: 'Шаг 3',
@@ -40,6 +42,7 @@ const defaultState = [
             }
         ],
         questionTitle: 'Материал стен',
+        answer: ['']
     },
     {
         step: 'Шаг 4',
@@ -55,16 +58,14 @@ const defaultState = [
             },
 
         ],
+        answer: ['']
     },
 ]
 
 const buildingReducer = (state = defaultState, action) => {
     switch (action.type) {
-        case 'NEXTBTN':
-            return {
-                ...state,
-                step: action.payload
-            }
+        case 'ANSWER':
+            console.log(action)
         default:
             return state
     }
